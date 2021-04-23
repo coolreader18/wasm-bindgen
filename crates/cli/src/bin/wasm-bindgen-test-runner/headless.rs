@@ -2,7 +2,6 @@ use crate::shell::Shell;
 use anyhow::{bail, format_err, Context, Error};
 use curl::easy::{Easy, List};
 use log::{debug, warn};
-use rouille::url::Url;
 use serde::{Deserialize, Serialize};
 use serde_json::{self, json, Map, Value as Json};
 use std::env;
@@ -13,6 +12,7 @@ use std::path::{Path, PathBuf};
 use std::process::{Child, Command, Stdio};
 use std::thread;
 use std::time::{Duration, Instant};
+use url::Url;
 
 /// Options that can use to customize and configure a WebDriver session.
 type Capabilities = Map<String, Json>;
